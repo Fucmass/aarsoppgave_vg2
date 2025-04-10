@@ -9,7 +9,7 @@ const app = express()
 
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://localhost:5173']
+    const allowedOrigins = ['http://localhost:5173', 'https://localhost:3001']
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -56,4 +56,17 @@ app.post('/auth/register', async (req, res) => {
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
+})
+
+
+
+
+app.post('/auth/login', async (req, res) => {
+  const { email, password }= req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: "Missing required inputs" })
+  }
+
+  
 })

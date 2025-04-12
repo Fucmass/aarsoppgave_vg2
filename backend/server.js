@@ -53,6 +53,20 @@ app.post('/auth/register', async (req, res) => {
   }
 })
 
+
+app.post('/auth/login', async (req, res) => {
+  const { email, password }= req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: "Missing required inputs" })
+  }
+  try {
+    
+  }
+  
+})
+
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
@@ -61,12 +75,3 @@ app.listen(port, () => {
 
 
 
-app.post('/auth/login', async (req, res) => {
-  const { email, password }= req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ message: "Missing required inputs" })
-  }
-
-  
-})

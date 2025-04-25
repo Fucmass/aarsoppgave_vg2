@@ -17,21 +17,8 @@ sudo apt install mariadb-server
 ```
 - Updates your system’s package list and installs MariaDB.
 
-### CentOS/RHEL
-```bash
-sudo yum install mariadb-server
-```
-- Uses the `yum` package manager to install MariaDB.
-
-### macOS (Homebrew)
-```bash
-brew install mariadb
-```
-- Installs MariaDB using Homebrew.
-
 ### Start and Enable the Service
 ```bash
-sudo systemctl start mariadb
 sudo systemctl enable mariadb
 ```
 - Starts the MariaDB server and enables it to run on boot.
